@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3 Auto Detalhamento</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    h1 {
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #bbb;
+      line-height: 1.5;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 18px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>M3 AUTO</h1>
+    <p>Aplicativo oficial da M3 Auto Detalhamento</p>
+  </header>
+
+  <main>
+
+    <div class="card">
+      <h2>Agende seu atendimento</h2>
+      <p>
+        Escolha o serviço de detalhamento automotivo
+        e solicite seu horário.
+      </p>
+      <button onclick="agendar()">Agendar atendimento</button>
+    </div>
+
+    <div class="card">
+      <h2>Meus agendamentos</h2>
+      <p>
+        Consulte seus atendimentos e acompanhe o status
+        do seu veículo.
+      </p>
+      <button onclick="consultar()">Consultar agendamento</button>
+    </div>
+
+    <div class="card">
+      <h2>Produtos</h2>
+      <p>
+        Em breve você poderá conhecer e comprar
+        produtos utilizados pela M3 Auto.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    function agendar() {
+      alert("Área de agendamento da M3 Auto em desenvolvimento.");
+    }
+
+    function consultar() {
+      alert("Área de consulta de agendamentos em desenvolvimento.");
+    }
+  </script>
+
+</body>
+</html>
