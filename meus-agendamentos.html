@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Agendamentos - M3 Auto</title>  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #bbb;
+      line-height: 1.5;
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 7px;
+      color: #ddd;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 9px;
+      border: 1px solid #444;
+      background: #0f0f0f;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 18px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .voltar {
+      background: #222;
+      color: white;
+    }
+
+    .resultado {
+      display: none;
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 10px;
+      background: #101010;
+      border: 1px solid #444;
+      line-height: 1.7;
+    }
+  </style></head><body>  <header>
+    <h1>M3 AUTO</h1>
+    <p>Meus Agendamentos</p>
+  </header>  <main><div class="card">
+
+  <h2>Consultar atendimento</h2>
+
+  <p>
+    Informe a placa do veículo para consultar
+    seus agendamentos.
+  </p>
+
+  <label for="placa">Placa do veículo</label>
+
+  <input
+    type="text"
+    id="placa"
+    placeholder="ABC1D23"
+  >
+
+  <button onclick="consultarAgendamento()">
+    Consultar
+  </button>
+
+  <button class="voltar" onclick="voltar()">
+    Voltar
+  </button>
+
+  <div class="resultado" id="resultado"></div>
+
+</div>
+
+  </main>  <script>
+    function consultarAgendamento() {
+
+      const placa = document
+        .getElementById("placa")
+        .value
+        .trim();
+
+      if (!placa) {
+        alert("Digite a placa do veículo.");
+        return;
+      }
+
+      const resultado = document.getElementById("resultado");
+
+      resultado.style.display = "block";
+
+      resultado.innerHTML =
+        "<strong>Consulta realizada</strong><br><br>" +
+        "Placa informada: " + placa.toUpperCase() +
+        "<br><br>" +
+        "Nenhum agendamento confirmado foi encontrado neste momento.<br><br>" +
+        "Quando o sistema estiver conectado ao banco de dados da M3 Auto, " +
+        "os agendamentos reais aparecerão aqui.";
+    }
+
+    function voltar() {
+      window.location.href = "index.html";
+    }
+  </script></body>
+</html>
