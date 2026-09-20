@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="pt-BR">
+     <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agendamento - M3 Auto</title>  <style>
+  <title>Agendamento - M3 Auto</title>
+
+  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -57,7 +60,44 @@
       font-weight: bold;
     }
 
-    input,
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 9px;
+      border: 1px solid #444;
+      background: #0f0f0f;
+      color: white;
+      font-size: 16px;
+    }
+
+    .servicos {
+      margin-top: 10px;
+    }
+
+    .servico {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px;
+      margin-top: 10px;
+      background: #101010;
+      border: 1px solid #333;
+      border-radius: 9px;
+    }
+
+    .servico input {
+      width: 20px;
+      height: 20px;
+      accent-color: white;
+    }
+
+    .servico label {
+      margin: 0;
+      color: white;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
     select {
       width: 100%;
       padding: 14px;
@@ -98,87 +138,132 @@
       background: #1d1d1d;
       border: 1px solid #444;
       color: #ddd;
-      line-height: 1.5;
+      line-height: 1.6;
     }
-  </style></head><body>  <header>
+  </style>
+</head>
+
+<body>
+
+  <header>
     <h1>M3 AUTO</h1>
     <p>Agendamento Cliente</p>
-  </header>  <main><div class="card">
+  </header>
 
-  <h2>Solicite seu atendimento</h2>
+  <main>
 
-  <label for="nome">Nome completo</label>
-  <input type="text" id="nome" placeholder="Digite seu nome">
+    <div class="card">
 
-  <label for="whatsapp">WhatsApp</label>
-  <input type="tel" id="whatsapp" placeholder="(00) 00000-0000">
+      <h2>Solicite seu atendimento</h2>
 
-  <label for="placa">Placa do veículo</label>
-  <input type="text" id="placa" placeholder="ABC1D23">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Digite seu nome">
 
-  <label for="veiculo">Veículo</label>
-  <input type="text" id="veiculo" placeholder="Ex.: Toyota Corolla">
+      <label for="whatsapp">WhatsApp</label>
+      <input type="tel" id="whatsapp" placeholder="(00) 00000-0000">
 
-  <label for="servico">Escolha o serviço</label>
-  <select id="servico">
-    <option value="">Selecione um serviço</option>
-    <option>Lavagem detalhada</option>
-    <option>Higienização interna</option>
-    <option>Polimento</option>
-    <option>Vitrificação</option>
-    <option>Detalhamento completo</option>
-  </select>
+      <label for="placa">Placa do veículo</label>
+      <input type="text" id="placa" placeholder="ABC1D23">
 
-  <label for="data">Data desejada</label>
-  <input type="date" id="data">
+      <label for="veiculo">Veículo</label>
+      <input type="text" id="veiculo" placeholder="Ex.: Toyota Corolla">
 
-  <label for="horario">Horário desejado</label>
-  <select id="horario">
-    <option value="">Selecione um horário</option>
-    <option>08:00</option>
-    <option>09:00</option>
-    <option>10:00</option>
-    <option>11:00</option>
-    <option>13:00</option>
-    <option>14:00</option>
-    <option>15:00</option>
-    <option>16:00</option>
-    <option>17:00</option>
-  </select>
+      <label>Escolha os serviços</label>
 
-  <button onclick="confirmarAgendamento()">
-    Solicitar agendamento
-  </button>
+      <div class="servicos">
 
-  <button class="voltar" onclick="voltar()">
-    Voltar
-  </button>
+        <div class="servico">
+          <input type="checkbox" id="lavagem-completa" value="Lavagem completa">
+          <label for="lavagem-completa">Lavagem completa</label>
+        </div>
 
-  <div class="mensagem" id="mensagem"></div>
+        <div class="servico">
+          <input type="checkbox" id="lavagem-detalhada" value="Lavagem detalhada">
+          <label for="lavagem-detalhada">Lavagem detalhada</label>
+        </div>
 
-</div>
+        <div class="servico">
+          <input type="checkbox" id="detalhamento-completo" value="Detalhamento completo">
+          <label for="detalhamento-completo">Detalhamento completo</label>
+        </div>
 
-  </main>  <script>
+        <div class="servico">
+          <input type="checkbox" id="higienizacao" value="Higienização interna">
+          <label for="higienizacao">Higienização interna</label>
+        </div>
+
+        <div class="servico">
+          <input type="checkbox" id="polimento" value="Polimento">
+          <label for="polimento">Polimento</label>
+        </div>
+
+        <div class="servico">
+          <input type="checkbox" id="vitrificacao" value="Vitrificação">
+          <label for="vitrificacao">Vitrificação</label>
+        </div>
+
+      </div>
+
+      <label for="data">Data desejada</label>
+      <input type="date" id="data">
+
+      <label for="horario">Horário desejado</label>
+
+      <select id="horario">
+        <option value="">Selecione um horário</option>
+        <option>08:00</option>
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+      </select>
+
+      <button onclick="confirmarAgendamento()">
+        Solicitar agendamento
+      </button>
+
+      <button class="voltar" onclick="voltar()">
+        Voltar
+      </button>
+
+      <div class="mensagem" id="mensagem"></div>
+
+    </div>
+
+  </main>
+
+  <script>
     function confirmarAgendamento() {
 
-      const nome = document.getElementById("nome").value;
-      const whatsapp = document.getElementById("whatsapp").value;
-      const placa = document.getElementById("placa").value;
-      const veiculo = document.getElementById("veiculo").value;
-      const servico = document.getElementById("servico").value;
+      const nome = document.getElementById("nome").value.trim();
+      const whatsapp = document.getElementById("whatsapp").value.trim();
+      const placa = document.getElementById("placa").value.trim();
+      const veiculo = document.getElementById("veiculo").value.trim();
       const data = document.getElementById("data").value;
       const horario = document.getElementById("horario").value;
+
+      const servicosSelecionados = [];
+
+      document
+        .querySelectorAll('.servicos input[type="checkbox"]:checked')
+        .forEach(function(checkbox) {
+          servicosSelecionados.push(checkbox.value);
+        });
 
       if (
         !nome ||
         !whatsapp ||
         !placa ||
         !veiculo ||
-        !servico ||
+        servicosSelecionados.length === 0 ||
         !data ||
         !horario
       ) {
-        alert("Preencha todos os campos para continuar.");
+        alert("Preencha todos os campos e escolha pelo menos um serviço.");
         return;
       }
 
@@ -190,8 +275,10 @@
         "<strong>Solicitação registrada!</strong><br><br>" +
         "Cliente: " + nome + "<br>" +
         "Veículo: " + veiculo + "<br>" +
-        "Placa: " + placa + "<br>" +
-        "Serviço: " + servico + "<br>" +
+        "Placa: " + placa.toUpperCase() + "<br><br>" +
+        "<strong>Serviços selecionados:</strong><br>" +
+        servicosSelecionados.join("<br>") +
+        "<br><br>" +
         "Data: " + data + "<br>" +
         "Horário: " + horario + "<br><br>" +
         "Em breve a M3 Auto confirmará o atendimento.";
@@ -200,5 +287,7 @@
     function voltar() {
       window.location.href = "index.html";
     }
-  </script></body>
-</html>
+  </script>
+
+</body>
+</html> 
