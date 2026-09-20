@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M3 Auto Detalhamento</title>
-
-  <style>
+  <title>M3 Auto Detalhamento</title>  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -74,55 +71,42 @@
     button:hover {
       opacity: 0.85;
     }
-  </style>
-</head>
-
-<body>
-
-  <header>
+  </style></head><body>  <header>
     <h1>M3 AUTO</h1>
     <p>Aplicativo oficial da M3 Auto Detalhamento</p>
-  </header>
+  </header>  <main><div class="card">
+  <h2>Agendamento Cliente</h2>
+  <p>
+    Escolha o serviço de detalhamento automotivo
+    e solicite seu horário.
+  </p>
+  <button onclick="agendar()">Agendar atendimento</button>
+</div>
 
-  <main>
+<div class="card">
+  <h2>Meus Agendamentos</h2>
+  <p>
+    Consulte seus atendimentos e acompanhe o status
+    do seu veículo.
+  </p>
+  <button onclick="consultar()">Meus agendamentos</button>
+</div>
 
-    <div class="card">
-      <h2>Agende seu atendimento</h2>
-      <p>
-        Escolha o serviço de detalhamento automotivo
-        e solicite seu horário.
-      </p>
-      <button onclick="agendar()">Agendar atendimento</button>
-    </div>
+<div class="card">
+  <h2>Produtos</h2>
+  <p>
+    Em breve você poderá conhecer e comprar
+    produtos utilizados pela M3 Auto.
+  </p>
+</div>
 
-    <div class="card">
-      <h2>Meus agendamentos</h2>
-      <p>
-        Consulte seus atendimentos e acompanhe o status
-        do seu veículo.
-      </p>
-      <button onclick="consultar()">Consultar agendamento</button>
-    </div>
-
-    <div class="card">
-      <h2>Produtos</h2>
-      <p>
-        Em breve você poderá conhecer e comprar
-        produtos utilizados pela M3 Auto.
-      </p>
-    </div>
-
-  </main>
-
-  <script>
+  </main>  <script>
     function agendar() {
-      alert("Área de agendamento da M3 Auto em desenvolvimento.");
+      window.location.href = "agendamento.html";
     }
 
     function consultar() {
-      alert("Área de consulta de agendamentos em desenvolvimento.");
+      window.location.href = "meus-agendamentos.html";
     }
-  </script>
-
-</body>
+  </script></body>
 </html>
