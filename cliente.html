@@ -1,1 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Cliente - M3 Auto</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 25px 20px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    .boas-vindas {
+      margin-bottom: 25px;
+    }
+
+    .boas-vindas h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .boas-vindas p {
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    .menu {
+      display: grid;
+      gap: 15px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: #aaa;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: black;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .secundario {
+      background: #222;
+      color: white;
+      border: 1px solid #444;
+    }
+
+    .rodape {
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>M3 AUTO</h1>
+    <p>Área do Cliente</p>
+  </header>
+
+  <main>
+
+    <div class="boas-vindas">
+
+      <h2>Olá, cliente!</h2>
+
+      <p>
+        Aqui você poderá acompanhar seus atendimentos,
+        agendar serviços e gerenciar seus dados.
+      </p>
+
+    </div>
+
+    <div class="menu">
+
+      <div class="card">
+
+        <h3>📅 Novo agendamento</h3>
+
+        <p>
+          Escolha os serviços, data, horário e local
+          para solicitar seu atendimento.
+        </p>
+
+        <button onclick="novoAgendamento()">
+          Agendar atendimento
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>📋 Meus agendamentos</h3>
+
+        <p>
+          Consulte seus atendimentos e acompanhe
+          o status de cada serviço.
+        </p>
+
+        <button onclick="meusAgendamentos()">
+          Ver meus agendamentos
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>👤 Meu perfil</h3>
+
+        <p>
+          Consulte e futuramente altere seus dados
+          pessoais e informações de contato.
+        </p>
+
+        <button class="secundario" onclick="meuPerfil()">
+          Meu perfil
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>📍 Meus endereços</h3>
+
+        <p>
+          Gerencie seu endereço principal e outros
+          locais que poderão ser utilizados nos atendimentos.
+        </p>
+
+        <button class="secundario" onclick="meusEnderecos()">
+          Ver endereços
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>🚗 Meus veículos</h3>
+
+        <p>
+          Cadastre e gerencie os veículos que serão
+          atendidos pela M3 Auto.
+        </p>
+
+        <button class="secundario" onclick="meusVeiculos()">
+          Meus veículos
+        </button>
+
+      </div>
+
+      <div class="card">
+
+        <h3>🛍️ Produtos</h3>
+
+        <p>
+          Em breve você poderá conhecer e comprar
+          produtos selecionados pela M3 Auto.
+        </p>
+
+        <button class="secundario" onclick="produtos()">
+          Ver produtos
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="rodape">
+      M3 Auto Detalhamento
+    </div>
+
+  </main>
+
+  <script>
+
+    function novoAgendamento() {
+      window.location.href = "agendamento.html";
+    }
+
+    function meusAgendamentos() {
+      window.location.href = "meus-agendamentos.html";
+    }
+
+    function meuPerfil() {
+      alert("Área de perfil em desenvolvimento.");
+    }
+
+    function meusEnderecos() {
+      alert("Área de endereços em desenvolvimento.");
+    }
+
+    function meusVeiculos() {
+      alert("Área de veículos em desenvolvimento.");
+    }
+
+    function produtos() {
+      alert("Área de produtos em desenvolvimento.");
+    }
+
+  </script>
+
+</body>
+</html>
