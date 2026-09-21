@@ -1,1 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - M3 Auto</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .explicacao {
+      color: #aaa;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .secao {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+    }
+
+    .secao h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 7px;
+      color: #ddd;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 9px;
+      border: 1px solid #444;
+      background: #0f0f0f;
+      color: white;
+      font-size: 16px;
+    }
+
+    .localizacao {
+      margin-top: 20px;
+      padding: 18px;
+      background: #101010;
+      border: 1px solid #333;
+      border-radius: 12px;
+    }
+
+    .localizacao h4 {
+      margin-bottom: 8px;
+    }
+
+    .localizacao p {
+      color: #aaa;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .status {
+      margin-top: 12px;
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .localizacao-btn {
+      background: #222;
+      color: white;
+      border: 1px solid #444;
+      margin-top: 15px;
+    }
+
+    .voltar {
+      background: #222;
+      color: white;
+      border: 1px solid #444;
+    }
+
+    .mensagem {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #101010;
+      border: 1px solid #444;
+      line-height: 1.6;
+      color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>M3 AUTO</h1>
+    <p>Criar minha conta</p>
+  </header>
+
+  <main>
+
+    <div class="card">
+
+      <h2>Cadastro do cliente</h2>
+
+      <p class="explicacao">
+        Cadastre seus dados uma única vez. Depois,
+        eles poderão ser utilizados automaticamente
+        nos seus agendamentos.
+      </p>
+
+      <div class="secao">
+
+        <h3>👤 Dados pessoais</h3>
+
+        <label for="nome">Nome completo</label>
+        <input
+          type="text"
+          id="nome"
+          placeholder="Digite seu nome completo"
+        >
+
+        <label for="whatsapp">WhatsApp</label>
+        <input
+          type="tel"
+          id="whatsapp"
+          placeholder="(00) 00000-0000"
+        >
+
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="seuemail@email.com"
+        >
+
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          placeholder="Crie uma senha"
+        >
+
+      </div>
+
+      <div class="secao">
+
+        <h3>🏠 Endereço principal</h3>
+
+        <label for="cep">CEP</label>
+        <input
+          type="text"
+          id="cep"
+          placeholder="00000-000"
+        >
+
+        <label for="rua">Rua / Avenida</label>
+        <input
+          type="text"
+          id="rua"
+          placeholder="Digite o endereço"
+        >
+
+        <label for="numero">Número</label>
+        <input
+          type="text"
+          id="numero"
+          placeholder="Número"
+        >
+
+        <label for="complemento">Complemento</label>
+        <input
+          type="text"
+          id="complemento"
+          placeholder="Apartamento, bloco, casa, etc."
+        >
+
+        <label for="bairro">Bairro</label>
+        <input
+          type="text"
+          id="bairro"
+          placeholder="Digite o bairro"
+        >
+
+        <label for="cidade">Cidade</label>
+        <input
+          type="text"
+          id="cidade"
+          placeholder="Digite a cidade"
+        >
+
+        <label for="estado">Estado</label>
+        <select id="estado">
+          <option value="">Selecione o estado</option>
+          <option>AC</option>
+          <option>AL</option>
+          <option>AP</option>
+          <option>AM</option>
+          <option>BA</option>
+          <option>CE</option>
+          <option>DF</option>
+          <option>ES</option>
+          <option>GO</option>
+          <option>MA</option>
+          <option>MT</option>
+          <option>MS</option>
+          <option>MG</option>
+          <option>PA</option>
+          <option>PB</option>
+          <option>PR</option>
+          <option>PE</option>
+          <option>PI</option>
+          <option>RJ</option>
+          <option>RN</option>
+          <option>RS</option>
+          <option>RO</option>
+          <option>RR</option>
+          <option>SC</option>
+          <option>SP</option>
+          <option>SE</option>
+          <option>TO</option>
+        </select>
+
+        <label for="tipoLocal">Tipo de local</label>
+        <select id="tipoLocal">
+          <option value="">Selecione</option>
+          <option>Residência</option>
+          <option>Casa em condomínio</option>
+          <option>Apartamento</option>
+          <option>Empresa</option>
+          <option>Outro</option>
+        </select>
+
+        <label for="referencia">Ponto de referência</label>
+        <input
+          type="text"
+          id="referencia"
+          placeholder="Ex.: próximo ao shopping"
+        >
+
+      </div>
+
+      <div class="secao">
+
+        <h3>📍 Localização</h3>
+
+        <div class="localizacao">
+
+          <h4>Usar minha localização atual</h4>
+
+          <p>
+            Você poderá permitir que o aplicativo
+            utilize a localização do seu celular para
+            facilitar a chegada da M3 Auto ao local
+            do atendimento.
+          </p>
+
+          <button
+            type="button"
+            class="localizacao-btn"
+            onclick="obterLocalizacao()"
+          >
+            📍 Enviar minha localização
+          </button>
+
+          <div class="status" id="statusLocalizacao">
+            Localização ainda não informada.
+          </div>
+
+        </div>
+
+      </div>
+
+      <button onclick="criarConta()">
+        Criar minha conta
+      </button>
+
+      <button class="voltar" onclick="voltar()">
+        Voltar
+      </button>
+
+      <div class="mensagem" id="mensagem"></div>
+
+    </div>
+
+  </main>
+
+  <script>
+
+    let latitude = "";
+    let longitude = "";
+
+    function obterLocalizacao() {
+
+      const status = document.getElementById("statusLocalizacao");
+
+      if (!navigator.geolocation) {
+        status.innerHTML =
+          "Este dispositivo não permite obter localização pelo navegador.";
+        return;
+      }
+
+      status.innerHTML =
+        "Solicitando autorização para acessar sua localização...";
+
+      navigator.geolocation.getCurrentPosition(
+
+        function(posicao) {
+
+          latitude = posicao.coords.latitude;
+          longitude = posicao.coords.longitude;
+
+          status.innerHTML =
+            "✅ Localização registrada com sucesso.";
+        },
+
+        function() {
+
+          status.innerHTML =
+            "Não foi possível obter a localização. Você pode continuar informando o endereço manualmente.";
+        }
+
+      );
+    }
+
+    function criarConta() {
+
+      const nome =
+        document.getElementById("nome").value.trim();
+
+      const whatsapp =
+        document.getElementById("whatsapp").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const senha =
+        document.getElementById("senha").value;
+
+      const cep =
+        document.getElementById("cep").value.trim();
+
+      const rua =
+        document.getElementById("rua").value.trim();
+
+      const numero =
+        document.getElementById("numero").value.trim();
+
+      const bairro =
+        document.getElementById("bairro").value.trim();
+
+      const cidade =
+        document.getElementById("cidade").value.trim();
+
+      const estado =
+        document.getElementById("estado").value;
+
+      const tipoLocal =
+        document.getElementById("tipoLocal").value;
+
+      if (
+        !nome ||
+        !whatsapp ||
+        !email ||
+        !senha ||
+        !cep ||
+        !rua ||
+        !numero ||
+        !bairro ||
+        !cidade ||
+        !estado ||
+        !tipoLocal
+      ) {
+
+        alert(
+          "Preencha todos os campos obrigatórios para criar sua conta."
+        );
+
+        return;
+      }
+
+      const mensagem =
+        document.getElementById("mensagem");
+
+      mensagem.style.display = "block";
+
+      mensagem.innerHTML =
+        "<strong>Cadastro realizado!</strong><br><br>" +
+        "Cliente: " + nome + "<br>" +
+        "WhatsApp: " + whatsapp + "<br>" +
+        "E-mail: " + email + "<br>" +
+        "Endereço principal: " + rua + ", " + numero +
+        " - " + bairro + " - " + cidade + "/" + estado +
+        "<br><br>" +
+        "Agora poderemos utilizar esses dados nos próximos passos do aplicativo.";
+
+    }
+
+    function voltar() {
+      window.location.href = "index.html";
+    }
+
+  </script>
+
+</body>
+                      </html>
