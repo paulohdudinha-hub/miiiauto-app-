@@ -1,1 +1,432 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Veículos - M3 Auto</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 25px 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #aaa;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 20px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .explicacao {
+      color: #aaa;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .veiculo {
+      background: #101010;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 15px;
+    }
+
+    .veiculo h3 {
+      margin-bottom: 10px;
+    }
+
+    .veiculo p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .principal {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #222;
+      border: 1px solid #444;
+      color: #ddd;
+      font-size: 12px;
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 7px;
+      color: #ddd;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 9px;
+      border: 1px solid #444;
+      background: #0f0f0f;
+      color: white;
+      font-size: 16px;
+    }
+
+    .campo-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .campo-checkbox input {
+      width: 20px;
+      height: 20px;
+    }
+
+    .campo-checkbox label {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 22px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .voltar {
+      background: #222;
+      color: white;
+      border: 1px solid #444;
+    }
+
+    .mensagem {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #101010;
+      border: 1px solid #444;
+      color: #ddd;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>M3 AUTO</h1>
+    <p>Meus Veículos</p>
+  </header>
+
+  <main>
+
+    <div class="card">
+
+      <h2>🚗 Meus veículos</h2>
+
+      <p class="explicacao">
+        Cadastre seus veículos para facilitar seus próximos
+        agendamentos na M3 Auto.
+      </p>
+
+      <div id="listaVeiculos">
+
+        <div class="veiculo">
+
+          <h3>Meu veículo principal</h3>
+
+          <p>
+            Nenhum veículo cadastrado ainda.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Adicionar veículo</h2>
+
+      <label for="marca">
+        Marca
+      </label>
+
+      <input
+        type="text"
+        id="marca"
+        placeholder="Ex.: Toyota"
+      >
+
+      <label for="modelo">
+        Modelo
+      </label>
+
+      <input
+        type="text"
+        id="modelo"
+        placeholder="Ex.: Corolla"
+      >
+
+      <label for="ano">
+        Ano
+      </label>
+
+      <input
+        type="number"
+        id="ano"
+        placeholder="Ex.: 2024"
+      >
+
+      <label for="placa">
+        Placa
+      </label>
+
+      <input
+        type="text"
+        id="placa"
+        placeholder="ABC1D23"
+      >
+
+      <label for="cor">
+        Cor
+      </label>
+
+      <input
+        type="text"
+        id="cor"
+        placeholder="Ex.: Preto"
+      >
+
+      <label for="tipo">
+        Tipo de veículo
+      </label>
+
+      <select id="tipo">
+
+        <option value="">
+          Selecione
+        </option>
+
+        <option>
+          Carro
+        </option>
+
+        <option>
+          SUV
+        </option>
+
+        <option>
+          Pickup
+        </option>
+
+        <option>
+          Van
+        </option>
+
+        <option>
+          Moto
+        </option>
+
+        <option>
+          Outro
+        </option>
+
+      </select>
+
+      <div class="campo-checkbox">
+
+        <input
+          type="checkbox"
+          id="principal"
+        >
+
+        <label for="principal">
+          Definir como meu veículo principal
+        </label>
+
+      </div>
+
+      <button onclick="adicionarVeiculo()">
+        Adicionar veículo
+      </button>
+
+      <button
+        class="voltar"
+        onclick="voltar()"
+      >
+        Voltar para Área do Cliente
+      </button>
+
+      <div
+        class="mensagem"
+        id="mensagem"
+      ></div>
+
+    </div>
+
+  </main>
+
+  <script>
+
+    function adicionarVeiculo() {
+
+      const marca =
+        document.getElementById("marca").value.trim();
+
+      const modelo =
+        document.getElementById("modelo").value.trim();
+
+      const ano =
+        document.getElementById("ano").value.trim();
+
+      const placa =
+        document.getElementById("placa").value.trim();
+
+      const cor =
+        document.getElementById("cor").value.trim();
+
+      const tipo =
+        document.getElementById("tipo").value;
+
+      const principal =
+        document.getElementById("principal").checked;
+
+      if (
+        !marca ||
+        !modelo ||
+        !ano ||
+        !placa ||
+        !cor ||
+        !tipo
+      ) {
+
+        alert(
+          "Preencha todos os dados do veículo."
+        );
+
+        return;
+      }
+
+      const lista =
+        document.getElementById("listaVeiculos");
+
+      const novoVeiculo =
+        document.createElement("div");
+
+      novoVeiculo.className =
+        "veiculo";
+
+      novoVeiculo.innerHTML =
+
+        "<h3>" +
+        marca +
+        " " +
+        modelo +
+        "</h3>" +
+
+        "<p>" +
+        "Ano: " +
+        ano +
+        "<br>" +
+        "Placa: " +
+        placa.toUpperCase() +
+        "<br>" +
+        "Cor: " +
+        cor +
+        "<br>" +
+        "Tipo: " +
+        tipo +
+        "</p>" +
+
+        (
+          principal
+          ? '<span class="principal">Veículo principal</span>'
+          : ""
+        );
+
+      lista.appendChild(novoVeiculo);
+
+      const mensagem =
+        document.getElementById("mensagem");
+
+      mensagem.style.display = "block";
+
+      mensagem.innerHTML =
+        "<strong>Veículo adicionado!</strong><br><br>" +
+        marca +
+        " " +
+        modelo +
+        " foi cadastrado nesta tela.";
+
+      document.getElementById("marca").value = "";
+      document.getElementById("modelo").value = "";
+      document.getElementById("ano").value = "";
+      document.getElementById("placa").value = "";
+      document.getElementById("cor").value = "";
+      document.getElementById("tipo").value = "";
+      document.getElementById("principal").checked = false;
+
+    }
+
+    function voltar() {
+
+      window.location.href =
+        "cliente.html";
+
+    }
+
+  </script>
+
+</body>
+</html>
