@@ -1,4 +1,4 @@
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -27,7 +27,7 @@
 
     header h1 {
       font-size: 28px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
     header p {
@@ -49,7 +49,24 @@
     }
 
     h2 {
+      margin-bottom: 10px;
+    }
+
+    .explicacao {
+      color: #aaa;
+      line-height: 1.5;
       margin-bottom: 20px;
+    }
+
+    .secao {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+    }
+
+    .secao h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
     }
 
     label {
@@ -60,7 +77,8 @@
       font-weight: bold;
     }
 
-    input {
+    input,
+    select {
       width: 100%;
       padding: 14px;
       border-radius: 9px;
@@ -68,10 +86,6 @@
       background: #0f0f0f;
       color: white;
       font-size: 16px;
-    }
-
-    .servicos {
-      margin-top: 10px;
     }
 
     .servico {
@@ -98,14 +112,61 @@
       cursor: pointer;
     }
 
-    select {
-      width: 100%;
-      padding: 14px;
-      border-radius: 9px;
-      border: 1px solid #444;
-      background: #0f0f0f;
-      color: white;
-      font-size: 16px;
+    .local-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px;
+      margin-top: 10px;
+      background: #101010;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+
+    .local-option input {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+    }
+
+    .local-option label {
+      margin: 0;
+      font-weight: normal;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+
+    .local-option small {
+      display: block;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .outro-local {
+      display: none;
+      margin-top: 15px;
+      padding: 18px;
+      background: #101010;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+
+    .outro-local.ativo {
+      display: block;
+    }
+
+    .gps {
+      margin-top: 15px;
+      padding: 15px;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 10px;
+    }
+
+    .gps p {
+      color: #aaa;
+      line-height: 1.5;
+      font-size: 14px;
     }
 
     button {
@@ -125,9 +186,11 @@
       opacity: 0.85;
     }
 
+    .gps-btn,
     .voltar {
       background: #222;
       color: white;
+      border: 1px solid #444;
     }
 
     .mensagem {
@@ -135,7 +198,7 @@
       margin-top: 20px;
       padding: 15px;
       border-radius: 10px;
-      background: #1d1d1d;
+      background: #101010;
       border: 1px solid #444;
       color: #ddd;
       line-height: 1.6;
@@ -147,7 +210,7 @@
 
   <header>
     <h1>M3 AUTO</h1>
-    <p>Agendamento Cliente</p>
+    <p>Novo Agendamento</p>
   </header>
 
   <main>
@@ -156,138 +219,450 @@
 
       <h2>Solicite seu atendimento</h2>
 
-      <label for="nome">Nome completo</label>
-      <input type="text" id="nome" placeholder="Digite seu nome">
+      <p class="explicacao">
+        Escolha o veículo, os serviços, a data, o horário
+        e o local onde deseja receber o atendimento.
+      </p>
 
-      <label for="whatsapp">WhatsApp</label>
-      <input type="tel" id="whatsapp" placeholder="(00) 00000-0000">
+      <div class="secao">
 
-      <label for="placa">Placa do veículo</label>
-      <input type="text" id="placa" placeholder="ABC1D23">
+        <h3>🚗 Veículo</h3>
 
-      <label for="veiculo">Veículo</label>
-      <input type="text" id="veiculo" placeholder="Ex.: Toyota Corolla">
+        <label for="veiculo">Selecione seu veículo</label>
 
-      <label>Escolha os serviços</label>
+        <select id="veiculo">
 
-      <div class="servicos">
+          <option value="">
+            Selecione um veículo
+          </option>
+
+          <option>
+            Meu veículo principal
+          </option>
+
+          <option>
+            Outro veículo cadastrado
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="secao">
+
+        <h3>🧽 Serviços</h3>
 
         <div class="servico">
-          <input type="checkbox" id="lavagem-completa" value="Lavagem completa">
-          <label for="lavagem-completa">Lavagem completa</label>
+          <input
+            type="checkbox"
+            id="lavagem-completa"
+            value="Lavagem completa"
+          >
+          <label for="lavagem-completa">
+            Lavagem completa
+          </label>
         </div>
 
         <div class="servico">
-          <input type="checkbox" id="lavagem-detalhada" value="Lavagem detalhada">
-          <label for="lavagem-detalhada">Lavagem detalhada</label>
+          <input
+            type="checkbox"
+            id="lavagem-detalhada"
+            value="Lavagem detalhada"
+          >
+          <label for="lavagem-detalhada">
+            Lavagem detalhada
+          </label>
         </div>
 
         <div class="servico">
-          <input type="checkbox" id="detalhamento-completo" value="Detalhamento completo">
-          <label for="detalhamento-completo">Detalhamento completo</label>
+          <input
+            type="checkbox"
+            id="detalhamento-completo"
+            value="Detalhamento completo"
+          >
+          <label for="detalhamento-completo">
+            Detalhamento completo
+          </label>
         </div>
 
         <div class="servico">
-          <input type="checkbox" id="higienizacao" value="Higienização interna">
-          <label for="higienizacao">Higienização interna</label>
+          <input
+            type="checkbox"
+            id="higienizacao"
+            value="Higienização interna"
+          >
+          <label for="higienizacao">
+            Higienização interna
+          </label>
         </div>
 
         <div class="servico">
-          <input type="checkbox" id="polimento" value="Polimento">
-          <label for="polimento">Polimento</label>
+          <input
+            type="checkbox"
+            id="polimento"
+            value="Polimento"
+          >
+          <label for="polimento">
+            Polimento
+          </label>
         </div>
 
         <div class="servico">
-          <input type="checkbox" id="vitrificacao" value="Vitrificação">
-          <label for="vitrificacao">Vitrificação</label>
+          <input
+            type="checkbox"
+            id="vitrificacao"
+            value="Vitrificação"
+          >
+          <label for="vitrificacao">
+            Vitrificação
+          </label>
         </div>
 
       </div>
 
-      <label for="data">Data desejada</label>
-      <input type="date" id="data">
+      <div class="secao">
 
-      <label for="horario">Horário desejado</label>
+        <h3>📅 Data e horário</h3>
 
-      <select id="horario">
-        <option value="">Selecione um horário</option>
-        <option>08:00</option>
-        <option>09:00</option>
-        <option>10:00</option>
-        <option>11:00</option>
-        <option>13:00</option>
-        <option>14:00</option>
-        <option>15:00</option>
-        <option>16:00</option>
-        <option>17:00</option>
-      </select>
+        <label for="data">
+          Data desejada
+        </label>
+
+        <input
+          type="date"
+          id="data"
+        >
+
+        <label for="horario">
+          Horário desejado
+        </label>
+
+        <select id="horario">
+
+          <option value="">
+            Selecione um horário
+          </option>
+
+          <option>08:00</option>
+          <option>09:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+
+        </select>
+
+      </div>
+
+      <div class="secao">
+
+        <h3>📍 Local do atendimento</h3>
+
+        <p class="explicacao">
+          Escolha onde deseja receber o atendimento.
+          O local escolhido para este agendamento não
+          altera seu endereço principal cadastrado.
+        </p>
+
+        <div class="local-option">
+
+          <input
+            type="radio"
+            name="local"
+            id="endereco-principal"
+            value="Endereço principal"
+            checked
+            onchange="selecionarLocal()"
+          >
+
+          <label for="endereco-principal">
+
+            🏠 Meu endereço principal
+
+            <small>
+              Usar o endereço salvo no meu cadastro.
+            </small>
+
+          </label>
+
+        </div>
+
+        <div class="local-option">
+
+          <input
+            type="radio"
+            name="local"
+            id="outro-endereco"
+            value="Outro endereço"
+            onchange="selecionarLocal()"
+          >
+
+          <label for="outro-endereco">
+
+            📍 Outro endereço/local
+
+            <small>
+              Quero informar outro local para este atendimento.
+            </small>
+
+          </label>
+
+        </div>
+
+        <div class="outro-local" id="outroLocal">
+
+          <label for="endereco">
+            Endereço do atendimento
+          </label>
+
+          <input
+            type="text"
+            id="endereco"
+            placeholder="Rua, número, bairro, cidade"
+          >
+
+          <label for="referencia">
+            Ponto de referência
+          </label>
+
+          <input
+            type="text"
+            id="referencia"
+            placeholder="Ex.: portaria do condomínio"
+          >
+
+          <div class="gps">
+
+            <strong>📱 Localização atual</strong>
+
+            <p>
+              Se preferir, permita o acesso à localização
+              do celular para facilitar a chegada da M3 Auto.
+            </p>
+
+            <button
+              type="button"
+              class="gps-btn"
+              onclick="obterLocalizacao()"
+            >
+              📍 Usar minha localização atual
+            </button>
+
+            <p id="statusGps">
+              Localização ainda não informada.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
 
       <button onclick="confirmarAgendamento()">
         Solicitar agendamento
       </button>
 
-      <button class="voltar" onclick="voltar()">
+      <button
+        class="voltar"
+        onclick="voltar()"
+      >
         Voltar
       </button>
 
-      <div class="mensagem" id="mensagem"></div>
+      <div
+        class="mensagem"
+        id="mensagem"
+      ></div>
 
     </div>
 
   </main>
 
   <script>
+
+    let latitude = "";
+    let longitude = "";
+
+    function selecionarLocal() {
+
+      const outro =
+        document.getElementById("outro-endereco");
+
+      const bloco =
+        document.getElementById("outroLocal");
+
+      if (outro.checked) {
+
+        bloco.classList.add("ativo");
+
+      } else {
+
+        bloco.classList.remove("ativo");
+
+      }
+
+    }
+
+    function obterLocalizacao() {
+
+      const status =
+        document.getElementById("statusGps");
+
+      if (!navigator.geolocation) {
+
+        status.innerHTML =
+          "Este dispositivo não permite obter localização pelo navegador.";
+
+        return;
+      }
+
+      status.innerHTML =
+        "Solicitando autorização para acessar sua localização...";
+
+      navigator.geolocation.getCurrentPosition(
+
+        function(posicao) {
+
+          latitude =
+            posicao.coords.latitude;
+
+          longitude =
+            posicao.coords.longitude;
+
+          status.innerHTML =
+            "✅ Localização obtida com sucesso.";
+
+        },
+
+        function() {
+
+          status.innerHTML =
+            "Não foi possível obter a localização. Você pode informar o endereço manualmente.";
+
+        }
+
+      );
+
+    }
+
     function confirmarAgendamento() {
 
-      const nome = document.getElementById("nome").value.trim();
-      const whatsapp = document.getElementById("whatsapp").value.trim();
-      const placa = document.getElementById("placa").value.trim();
-      const veiculo = document.getElementById("veiculo").value.trim();
-      const data = document.getElementById("data").value;
-      const horario = document.getElementById("horario").value;
+      const veiculo =
+        document.getElementById("veiculo").value;
+
+      const data =
+        document.getElementById("data").value;
+
+      const horario =
+        document.getElementById("horario").value;
+
+      const local =
+        document.querySelector(
+          'input[name="local"]:checked'
+        ).value;
+
+      const endereco =
+        document.getElementById("endereco").value.trim();
 
       const servicosSelecionados = [];
 
       document
-        .querySelectorAll('.servicos input[type="checkbox"]:checked')
+        .querySelectorAll(
+          '.servico input[type="checkbox"]:checked'
+        )
         .forEach(function(checkbox) {
-          servicosSelecionados.push(checkbox.value);
+
+          servicosSelecionados.push(
+            checkbox.value
+          );
+
         });
 
       if (
-        !nome ||
-        !whatsapp ||
-        !placa ||
         !veiculo ||
         servicosSelecionados.length === 0 ||
         !data ||
         !horario
       ) {
-        alert("Preencha todos os campos e escolha pelo menos um serviço.");
+
+        alert(
+          "Selecione o veículo, pelo menos um serviço, a data e o horário."
+        );
+
         return;
       }
 
-      const mensagem = document.getElementById("mensagem");
+      if (
+        local === "Outro endereço" &&
+        !endereco &&
+        !latitude
+      ) {
+
+        alert(
+          "Informe o endereço do atendimento ou utilize sua localização atual."
+        );
+
+        return;
+      }
+
+      const mensagem =
+        document.getElementById("mensagem");
 
       mensagem.style.display = "block";
 
       mensagem.innerHTML =
         "<strong>Solicitação registrada!</strong><br><br>" +
-        "Cliente: " + nome + "<br>" +
-        "Veículo: " + veiculo + "<br>" +
-        "Placa: " + placa.toUpperCase() + "<br><br>" +
-        "<strong>Serviços selecionados:</strong><br>" +
-        servicosSelecionados.join("<br>") +
+
+        "Veículo: " +
+        veiculo +
         "<br><br>" +
-        "Data: " + data + "<br>" +
-        "Horário: " + horario + "<br><br>" +
-        "Em breve a M3 Auto confirmará o atendimento.";
+
+        "<strong>Serviços:</strong><br>" +
+        servicosSelecionados.join("<br>") +
+
+        "<br><br>" +
+
+        "Data: " +
+        data +
+
+        "<br>" +
+
+        "Horário: " +
+        horario +
+
+        "<br><br>" +
+
+        "<strong>Local:</strong><br>" +
+        local +
+
+        (
+          local === "Outro endereço"
+          ? "<br>" +
+            (
+              endereco
+              ? endereco
+              : "Localização GPS informada"
+            )
+          : ""
+        ) +
+
+        "<br><br>" +
+
+        "A M3 Auto analisará a solicitação e confirmará o atendimento.";
+
     }
 
     function voltar() {
-      window.location.href = "index.html";
+
+      window.location.href =
+        "cliente.html";
+
     }
+
   </script>
 
 </body>
-</html> 
+</html>
